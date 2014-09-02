@@ -1,0 +1,16 @@
+{
+  "name": "gratitude-web",
+  "version": "0.1.0",
+  "description": "A Gratitude Journal",
+  "author": "Chen Zihui <hello@chenzihui.com>",
+  "dependencies": {
+    "ember": "~1.7.0",
+    "handlebars": "~1.3.0",
+    "jquery": "~2.1.1",
+    "ember-data": "~0.0.14"
+  },
+  "devDependencies": {},
+  "resolutions": {
+    "ember": "~1.7.0"
+  }
+}
