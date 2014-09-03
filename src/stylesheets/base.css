@@ -1,0 +1,105 @@
+/* General
+ ============================== */
+
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body {
+    color: #444;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+
+
+/* Links
+ ============================== */
+
+a {
+    color: #05a9e3;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0490c2;
+}
+
+
+
+/* Typography
+ ============================== */
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.4;
+    margin-bottom: .7em;
+    margin-top: .7em;
+}
+
+.ms1 {
+    font-size: 4.236em;
+    line-height: 1;
+}
+
+.ms2 {
+    font-size: 2.618em;
+    line-height: 1;
+}
+
+.ms3 {
+    font-size: 1.618em;
+    line-height: 1.7;
+}
+
+.ms4 {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+.ms5 {
+    font-size: .649em;
+    line-height: 2.1;
+}
+
+.uppercase {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+
+/* Lists
+ ============================== */
+
+.list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.list__item {
+    margin-bottom: .7em;
+    margin-top: .7em;
+}
+
+
+
+/* Spacing
+ ============================== */
+
+.space {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.breathe {
+    padding: 5px;
+}
