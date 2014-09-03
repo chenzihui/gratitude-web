@@ -19,7 +19,8 @@ gulp.task('clean', function(done) {
 
 gulp.task('watch', function() {
   gulp.watch('src/**/*.js', ['concat:app']);
-  gulp.watch('src/templates/**/*.js', ['templates']);
+  gulp.watch('src/stylesheets/*.css', ['concat:css']);
+  gulp.watch('src/templates/**/*.hbs', ['templates']);
 });
 
 
@@ -33,21 +34,21 @@ gulp.task('concat:vendor', function() {
   ])
   .pipe(concat('vendor.js'))
   .pipe(uglify())
-  .pipe(gulp.dest('./build/'));
+  .pipe(gulp.dest('./build/js/'));
 });
 
 gulp.task('concat:js', function() {
   gulp.src('./src/**/*.js')
     .pipe(concat('app.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('./build/'));
+    .pipe(gulp.dest('./build/js/'));
 });
 
 gulp.task('concat:css', function() {
   gulp.src(['./src/stylesheets/normalize.css', './src/stylesheets/base.css'])
     .pipe(concat('app.css'))
     .pipe(cssmin())
-    .pipe(gulp.dest('./build'));
+    .pipe(gulp.dest('./build/css/'));
 });
 
 gulp.task('concat:app', ['concat:vendor', 'concat:js', 'concat:css']);
@@ -67,7 +68,7 @@ gulp.task('templates', function() {
       noRedeclare: true
     }))
     .pipe(concat('templates.js'))
-    .pipe(gulp.dest('./build/'));
+    .pipe(gulp.dest('./build/js/'));
 });
 
 
