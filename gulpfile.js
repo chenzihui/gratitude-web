@@ -7,7 +7,7 @@ var gulp       = require('gulp'),
     handlebars = require('gulp-handlebars'),
     wrap       = require('gulp-wrap'),
     declare    = require('gulp-declare'),
-    cssmin     = require('gulp-cssmin');
+    cssmin     = require('gulp-minify-css');
 
 
 // Helpers
@@ -47,13 +47,15 @@ gulp.task('concat:js', function() {
 gulp.task('concat:css', function() {
   gulp.src(['./src/stylesheets/normalize.css', './src/stylesheets/*.css'])
     .pipe(concat('app.css'))
-    .pipe(cssmin())
+    .pipe(cssmin({
+      keepSpecialComments: 1
+    }))
     .pipe(gulp.dest('./build/css/'));
 });
 
 gulp.task('copy:assets', function() {
   gulp.src('./src/stylesheets/fonts/*')
-    .pipe(gulp.dest('./build/css/fonts/'));
+    .pipe(gulp.dest('./build/fonts/'));
 });
 
 gulp.task(

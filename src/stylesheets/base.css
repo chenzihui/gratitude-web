@@ -26,6 +26,9 @@ a {
 
 a:hover {
     color: #0490c2;
+    -webkit-transition: .2s all linear;
+       -moz-transition: .2s all linear;
+            transition: .2s all linear;
 }
 
 
@@ -34,6 +37,8 @@ a:hover {
  ============================== */
 
 h1,h2,h3,h4,h5,h6 {
+    font-family: "Roboto Slab", Georgia, serif;
+    font-weight: 400;
     margin: 0;
 }
 
@@ -102,4 +107,8 @@ p {
 
 .breathe {
     padding: 5px;
+}
+
+.breathe--large {
+    padding: 10px;
 }

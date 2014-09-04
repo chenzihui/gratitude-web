@@ -1,0 +1,19 @@
+/* Header
+ ============================== */
+
+.masthead {
+    display: flex;
+}
+
+.masthead__title {
+    flex: 0 1 100%;
+    text-align: center;
+}
+
+.masthead__link {
+    color: #444;
+}
+
+.masthead__link:hover {
+    color: #666;
+}
