@@ -1,4 +1,42 @@
-/* Header
+/* General
+ ============================== */
+
+html, body {
+    height: 100%;
+}
+
+body .ember-view:first-of-type {
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+    left: 0;
+    position: relative;
+    width: 100%;
+    -webkit-transition: left .2s ease-in-out;
+       -moz-transition: left .2s ease-in-out;
+            transition: left .2s ease-in-out;
+}
+
+.container.slide {
+    left: 220px;
+}
+
+
+/* Sidepanel
+ ============================== */
+
+.sidepanel {
+    background-color: #f9f9f9;
+    height: 100%;
+    left: -220px;
+    position: absolute;
+    width: 220px;
+}
+
+
+/* Main
  ============================== */
 
 .masthead {

@@ -1,16 +1,21 @@
-<header class="masthead">
-    <a class="masthead__link breathe--large" href="#">
-        <i class="fa fa-bars"></i>
-    </a>
+<div class="container" {{bind-attr class="panelOpened:slide"}}>
+    <div class="sidepanel">
+        {{outlet "sidebar"}}
+    </div>
 
-    <h1 class="masthead__title ms3">Gratitude Journal</h1>
+    <div class="main">
+        <header class="masthead">
+            <a class="masthead__link breathe--large" href="#" {{action "toggleMenu" on="click"}}>
+                <i class="fa fa-bars"></i>
+            </a>
 
-    <a class="masthead__link breathe--large" href="#">
-        <i class="fa fa-th"></i>
-    </a>
-</header>
+            <h1 class="masthead__title ms3">Gratitude Journal</h1>
 
-{{outlet "sidebar"}}
-
-{{outlet "main"}}
-
+            <a class="masthead__link breathe--large" href="#">
+                <i class="fa fa-th"></i>
+            </a>
+        </header>
+        {{name}}
+        {{outlet "main"}}
+    </div>
+</div>

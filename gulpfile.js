@@ -60,7 +60,7 @@ gulp.task('copy:assets', function() {
 
 gulp.task(
   'concat:app',
-  ['concat:vendor', 'concat:js', 'concat:css', 'copy:assets']
+  ['copy:assets', 'concat:vendor', 'concat:js', 'concat:css']
 );
 
 
@@ -86,3 +86,4 @@ gulp.task('templates', function() {
 // ------------------------------
 
 gulp.task('default', ['clean', 'concat:app', 'templates']);
+gulp.task('dev', ['default', 'watch']);
