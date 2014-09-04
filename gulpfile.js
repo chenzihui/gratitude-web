@@ -45,13 +45,21 @@ gulp.task('concat:js', function() {
 });
 
 gulp.task('concat:css', function() {
-  gulp.src(['./src/stylesheets/normalize.css', './src/stylesheets/base.css'])
+  gulp.src(['./src/stylesheets/normalize.css', './src/stylesheets/*.css'])
     .pipe(concat('app.css'))
     .pipe(cssmin())
     .pipe(gulp.dest('./build/css/'));
 });
 
-gulp.task('concat:app', ['concat:vendor', 'concat:js', 'concat:css']);
+gulp.task('copy:assets', function() {
+  gulp.src('./src/stylesheets/fonts/*')
+    .pipe(gulp.dest('./build/css/fonts/'));
+});
+
+gulp.task(
+  'concat:app',
+  ['concat:vendor', 'concat:js', 'concat:css', 'copy:assets']
+);
 
 
 // Precompiling Handlebars
