@@ -112,3 +112,38 @@ p {
 .breathe--large {
     padding: 10px;
 }
+
+
+
+/* Modals
+ ============================== */
+
+.overlay {
+    align-items: center;
+    background-color: #f9f9f9;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    opacity: .95;
+    right: 0;
+    top: 0;
+}
+
+.overlay__close-btn {
+    background-image: url('/build/images/close-modal.png');
+    display: block;
+    height: 18px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 18px;
+}
+
+.modal {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-shadow: 0 0 4px rgba(0,0,0,.2);
+}

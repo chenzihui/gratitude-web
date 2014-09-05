@@ -20,7 +20,7 @@ gulp.task('clean', function(done) {
 gulp.task('watch', function() {
   gulp.watch('src/**/*.js', ['concat:app']);
   gulp.watch('src/stylesheets/*.css', ['concat:css']);
-  gulp.watch('src/templates/**/*.hbs', ['templates']);
+  gulp.watch('src/templates/**/*.hbs', ['concat:app', 'templates']);
 });
 
 
@@ -56,6 +56,9 @@ gulp.task('concat:css', function() {
 gulp.task('copy:assets', function() {
   gulp.src('./src/stylesheets/fonts/*')
     .pipe(gulp.dest('./build/fonts/'));
+
+  gulp.src('./src/images/*')
+    .pipe(gulp.dest('./build/images/'));
 });
 
 gulp.task(
