@@ -7,7 +7,8 @@ var gulp       = require('gulp'),
     handlebars = require('gulp-handlebars'),
     wrap       = require('gulp-wrap'),
     declare    = require('gulp-declare'),
-    cssmin     = require('gulp-minify-css');
+    cssmin     = require('gulp-minify-css'),
+    webserver  = require('gulp-webserver');
 
 
 // Helpers
@@ -85,8 +86,20 @@ gulp.task('templates', function() {
 });
 
 
+// Precompiling Handlebars
+// ------------------------------
+
+gulp.task('webserver', function() {
+  gulp.src('.')
+    .pipe(webserver({
+      livereload: false,
+      port: 4000
+    }));
+});
+
+
 // Tasks
 // ------------------------------
 
 gulp.task('default', ['clean', 'concat:app', 'templates']);
-gulp.task('dev', ['default', 'watch']);
+gulp.task('dev', ['concat:app', 'templates', 'webserver', 'watch']);
