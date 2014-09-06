@@ -14,6 +14,14 @@ body {
     line-height: 1.4;
 }
 
+.underline {
+    border-bottom: 1px solid #ddd;
+}
+
+.underline--dashed {
+    border-bottom: 1px dashed #ddd;
+}
+
 
 
 /* Links
@@ -103,6 +111,11 @@ p {
 .space {
     margin-bottom: 10px;
     margin-top: 10px;
+}
+
+.space--large {
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .breathe {

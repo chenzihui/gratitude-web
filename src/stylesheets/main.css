@@ -29,10 +29,33 @@ body .ember-view:first-of-type {
 
 .sidepanel {
     background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
     height: 100%;
     left: -220px;
     position: absolute;
     width: 220px;
+}
+
+.months {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.months__item {
+    flex: 1;
+    font-size: 12px;
+}
+
+.months__item a {
+    display: block;
+    color: #444;
+    padding: 15px 5px;
+}
+
+.months__item a:hover {
+    background-color: #eee;
 }
 
 

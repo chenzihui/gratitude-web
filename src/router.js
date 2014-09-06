@@ -2,7 +2,13 @@
 
 App.IndexRoute = Ember.Route.extend({
   renderTemplate: function(model, controller) {
-    this.render('sidebar', { outlet: 'sidebar' });
+    var sidebarCtrl = App.SidebarController.create();
+
+    this.render('sidebar', {
+      outlet: 'sidebar',
+      controller: sidebarCtrl
+    });
+
     this.render('journal', { outlet: 'main' });
   }
 });
