@@ -78,3 +78,42 @@ body .ember-view:first-of-type {
 .masthead__link:hover {
     color: #666;
 }
+
+
+/* Calendar
+ ============================== */
+
+.calendar {
+    height: 300px;
+    padding: 20px 10px;
+    width: 500px;
+}
+
+.hex {
+    background-color: #ddd;
+    float: left;
+    height: 15px;
+    margin-right: 6px;
+    margin-top: 30px;
+    position: relative;
+    width: 30px;
+}
+
+.hex:before,
+.hex:after {
+    content: "";
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    position: absolute;
+}
+
+.hex:before {
+    border-bottom: 10px solid #ddd;
+    top: -10px;
+}
+
+.hex:after {
+    border-top: 10px solid #ddd;
+    bottom: -10px;
+    width: 0;
+}

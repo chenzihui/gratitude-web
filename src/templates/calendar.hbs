@@ -1,6 +1,12 @@
 <div class="overlay">
     <a class="overlay__close-btn" href="#" {{action "closeModal" target="view"}}></a>
-    <div class="modal breathe">
-        <h1 class="ms3">Calendar View</h1>
+    <div class="modal breathe calendar">
+        <h1 class="ms4 underline--dashed">Statistics for {{month}}</h1>
+
+        <div class="group">
+            {{#each days}}
+            <div class="hex"></div>
+            {{/each}}
+        </div>
     </div>
 </div>

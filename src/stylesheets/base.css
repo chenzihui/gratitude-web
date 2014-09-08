@@ -22,6 +22,12 @@ body {
     border-bottom: 1px dashed #ddd;
 }
 
+.group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
 
 
 /* Links
