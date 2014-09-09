@@ -3,10 +3,26 @@
     <div class="modal breathe calendar">
         <h1 class="ms4 underline--dashed">Statistics for {{month}}</h1>
 
-        <div class="group">
-            {{#each days}}
-            <div class="hex"></div>
-            {{/each}}
+        <div class="flex stats underline--dashed">
+            <div class="flex__item stats__entries">
+                <h2 class="ms5 uppercase center--text">Entries</h2>
+
+                <p class="ms3 center--text space--nothing">23</p>
+            </div>
+
+            <div class="flex__item">
+                <h2 class="ms5 uppercase center--text">Streak</h2>
+
+                <p class="ms3 center--text space--nothing">7</p>
+            </div>
+        </div>
+
+        <div class="stats__summary group">
+            <div class="stats__days">
+                {{#each days}}
+                <div class="hex"></div>
+                {{/each}}
+            </div>
         </div>
     </div>
 </div>
