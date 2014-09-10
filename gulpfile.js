@@ -72,14 +72,18 @@ gulp.task(
 // ------------------------------
 
 gulp.task('templates', function() {
-  gulp.src('./src/templates/*.hbs')
+  gulp.src(['./src/templates/*.hbs'])
     .pipe(handlebars({
       handlebars: require('ember-handlebars')
     }))
     .pipe(wrap('Ember.Handlebars.template(<%= contents %>)'))
     .pipe(declare({
       namespace: 'Ember.TEMPLATES',
-      noRedeclare: true
+      noRedeclare: true,
+
+      processName: function(path) {
+        return declare.processNameByPath(path.replace('src/templates/', ''));
+      }
     }))
     .pipe(concat('templates.js'))
     .pipe(gulp.dest('./build/js/'));
