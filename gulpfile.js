@@ -72,7 +72,7 @@ gulp.task(
 // ------------------------------
 
 gulp.task('templates', function() {
-  gulp.src(['./src/templates/*.hbs'])
+  gulp.src('./src/templates/**/*.hbs')
     .pipe(handlebars({
       handlebars: require('ember-handlebars')
     }))
@@ -82,7 +82,14 @@ gulp.task('templates', function() {
       noRedeclare: true,
 
       processName: function(path) {
-        return declare.processNameByPath(path.replace('src/templates/', ''));
+        var path = path.replace('src/templates/', ''),
+            name = declare.processNameByPath(path);
+
+        if (name.indexOf('components') != -1) {
+          name = name.split('.').join('/')
+        }
+
+        return name;
       }
     }))
     .pipe(concat('templates.js'))
@@ -90,7 +97,7 @@ gulp.task('templates', function() {
 });
 
 
-// Precompiling Handlebars
+// Web Server
 // ------------------------------
 
 gulp.task('webserver', function() {
