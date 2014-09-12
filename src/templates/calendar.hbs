@@ -19,7 +19,10 @@
 
         <div class="stats__summary group">
             {{#each days}}
-            <div class="square pull-left"></div>
+            <div class="stats__entry pull-left">
+                <div class="square"></div>
+                <div class="stats__tooltip"></div>
+            </div>
             {{/each}}
         </div>
     </div>

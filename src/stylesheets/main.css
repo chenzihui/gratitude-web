@@ -102,11 +102,14 @@ body .ember-view:first-of-type {
     height: 15px;
     margin-right: 1px;
     margin-top: 1px;
-    position: relative;
     width: 15px
 }
 
-.stats__summary .square:hover {
+.stats__entry {
+    position: relative;
+}
+
+.stats__entry .square:hover {
     cursor: pointer;
 }
 
@@ -119,11 +122,22 @@ body .ember-view:first-of-type {
     border-radius: 4px;
     color: #eee;
     font-size: 13px;
+    left: -43px;
     min-height: 30px;
     padding: 5px;
     position: absolute;
+    opacity: 0;
     text-align: center;
+    top: -34px;
     width: 100px;
+}
+
+.square:hover + .stats__tooltip {
+    opacity: 1;
+    top: -38px;
+    -webkit-transition: all .3s ease-in-out;
+       -moz-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
 }
 
 .stats__tooltip:after {
