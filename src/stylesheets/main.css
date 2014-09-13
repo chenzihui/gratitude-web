@@ -63,6 +63,8 @@ body .ember-view:first-of-type {
  ============================== */
 
 .masthead {
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
     display: flex;
 }
 
@@ -150,4 +152,64 @@ body .ember-view:first-of-type {
     position: absolute;
     top: 30px;
     width: 0;
+}
+
+
+/* Journal
+ ============================== */
+
+.page {
+    padding: 30px 40px;
+}
+
+.page__title {
+    border-bottom: 10px solid #f7f7f7;
+    color: #666;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    padding-bottom: 5px;
+}
+
+.page__entries {
+    padding-left: 20px;
+}
+
+.page__entries__item {
+    color: #777;
+}
+
+.page__entries__item__text {
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.page__entries__item__hint {
+    color: #aaa;
+    display: none;
+    margin-top: 15px;
+}
+
+.page__entries__item:hover .page__entries__item__hint {
+    display: block;
+}
+
+.new-entry {
+    border-top: 1px dashed #ddd;
+    padding-top: 10px;
+}
+
+.new-entry__input {
+    border-radius: 3px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    display: block;
+    font-size: 18px;
+    font-weight: 200;
+    min-height: 30px;
+    padding: 5px 5px 10px;
+    width: 100%;
+}
+
+.new-entry__input:focus {
+    outline: 0;
 }
