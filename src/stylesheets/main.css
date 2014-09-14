@@ -37,6 +37,11 @@ body .ember-view:first-of-type {
     width: 220px;
 }
 
+.sidepanel__title {
+    background-color: #eee;
+    padding: 12px 10px;
+}
+
 .months {
     display: flex;
     flex: 1;
@@ -48,13 +53,17 @@ body .ember-view:first-of-type {
     font-size: 12px;
 }
 
-.months__item a {
+.months__item__text {
     display: block;
     color: #444;
-    padding: 15px 5px;
+    padding: 15px 10px;
 }
 
-.months__item a:hover {
+span.months__item__text {
+    color: #aaa;
+}
+
+a.months__item__text:hover {
     background-color: #eee;
 }
 
