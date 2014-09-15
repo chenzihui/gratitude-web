@@ -3,7 +3,19 @@
 App.JournalController = Ember.ArrayController.extend({
   actions: {
     createEntry: function() {
-      // TODO: Save the entry
+      var text = this.get('newEntry').trim(),
+
+          entry;
+
+      if (!text) { return false; }
+
+      entry = this.store.createRecord('entry', {
+        text: text
+      });
+
+      this.set('newEntry', '');
+
+      entry.save();
     }
   }
 });
