@@ -5,8 +5,6 @@ App.IndexRoute = Ember.Route.extend({
     var sidebarCtrl = App.SidebarController.create(),
         journalCtrl = App.JournalController.create();
 
-    journalCtrl.set('content', this.store.find('entry'));
-
     this.render('sidebar', {
       outlet: 'sidebar',
       controller: sidebarCtrl
@@ -14,7 +12,8 @@ App.IndexRoute = Ember.Route.extend({
 
     this.render('journal', {
       outlet: 'main',
-      controller: journalCtrl
+      controller: journalCtrl,
+      model: this.store.find('entry')
     });
   }
 });
