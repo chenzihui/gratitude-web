@@ -1,7 +1,7 @@
 'use strict';
 
 App.CalendarView = Ember.View.extend({
-  templateName: 'calendar',
+  templateName: 'entries/calendar',
 
   init: function() {
     var controller = App.CalendarController.create();
@@ -9,8 +9,6 @@ App.CalendarView = Ember.View.extend({
     this._super();
     this.set('controller', controller);
   },
-
-  test: 'hello world',
 
   actions: {
     closeModal: function() {

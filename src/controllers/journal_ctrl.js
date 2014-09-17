@@ -18,4 +18,4 @@ App.JournalController = Ember.ArrayController.extend({
       entry.save();
     }
   }
-});
+})

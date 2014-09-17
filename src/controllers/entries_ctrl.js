@@ -1,6 +1,6 @@
 'use strict';
 
-App.ApplicationController = Ember.Controller.extend({
+App.EntriesController = Ember.Controller.extend({
   panelOpened: false,
 
   actions: {

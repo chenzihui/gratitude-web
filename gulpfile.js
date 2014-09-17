@@ -87,11 +87,7 @@ gulp.task('templates', function() {
         var path = path.replace('src/templates/', ''),
             name = declare.processNameByPath(path);
 
-        if (name.indexOf('components') != -1) {
-          name = name.split('.').join('/')
-        }
-
-        return name;
+        return name.split('.').join('/')
       }
     }))
     .pipe(concat('templates.js'))
