@@ -193,9 +193,12 @@ a.months__item__text:hover {
 }
 
 .page__entries__item__hint {
-    color: #aaa;
     display: none;
     margin-top: 15px;
+}
+
+.page__entries__item a {
+    color: #aaa;
 }
 
 .page__entries__item:hover .page__entries__item__hint {

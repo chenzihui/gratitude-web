@@ -3,11 +3,13 @@
         <h2 class="ms2 page__title">13 September 2014</h2>
 
         <div class="page__entries">
-            {{#each}}
+            {{#each itemController="entry"}}
             <div class="page__entries__item group space--large">
                 <p class="pull-left ms4 page__entries__item__text">{{text}}</p>
 
-                <span class="pull-right ms5 page__entries__item__hint">Double click to edit</span>
+                <div class="pull-right page__entries__item__hint">
+                    <a href="#" {{action "deleteEntry" this}}><i class="fa fa-trash"></i></a>
+                </div>
             </div>
             {{/each}}
         </div>
