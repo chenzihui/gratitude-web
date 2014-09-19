@@ -4,13 +4,21 @@
 
         <div class="page__entries">
             {{#each itemController="entry"}}
-            <div class="page__entries__item group space--large">
-                <p class="pull-left ms4 page__entries__item__text">{{text}}</p>
+                {{#if editMode}}
+                    <div class="space--large">
+                    {{edit-entry class="page__entries__item--edit" value=text
+                        focus-out="saveChanges" insert-newline="saveChanges"}}
+                    </div>
+                {{else}}
+                <div class="page__entries__item group space--large">
+                    <p class="pull-left ms4 page__entries__item__text">{{text}}</p>
 
-                <div class="pull-right page__entries__item__hint">
-                    <a href="#" {{action "deleteEntry" this}}><i class="fa fa-trash"></i></a>
+                    <div class="pull-right page__entries__item__hint">
+                        <a href="#" {{action "editEntry"}}><i class="fa fa-edit"></i></a>
+                        <a href="#" {{action "deleteEntry"}}><i class="fa fa-close"></i></a>
+                    </div>
                 </div>
-            </div>
+                {{/if}}
             {{/each}}
         </div>
 
