@@ -1,7 +1,7 @@
 'use strict';
 
 App.EntriesView = Ember.View.extend({
-  templateName: 'entries',
+  templateName: 'index',
 
   actions: {
     openCalendar: function() {

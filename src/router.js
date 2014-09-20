@@ -2,21 +2,23 @@
 
 App.Router.map(function() {
   this.resource('entries', { path: '/' }, function() {
-    // Nested routes go here
+    // Nested routes
   });
 });
 
-App.EntriesIndexRoute = Ember.Route.extend({
-  renderTemplate: function(controller, model) {
-    this.render('entries/sidebar', {
-      outlet: 'sidebar',
-      controller: 'Sidebar'
-    });
+App.EntriesRoute = Ember.Route.extend({
+  model: function() {
+    return this.store.find('entry');
+  }
+})
 
-    this.render('entries/index', {
-      outlet: 'main',
-      controller: 'Journal',
-      model: this.store.find('entry')
-    });
+App.EntriesIndexRoute = Ember.Route.extend({
+  model: function() {
+    return this.modelFor('entries')
+  },
+
+  renderTemplate: function() {
+    var controller = this.controllerFor('entries');
+    this.render('entries/index', { controller: controller });
   }
 });

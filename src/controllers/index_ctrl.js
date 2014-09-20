@@ -1,6 +1,8 @@
 'use strict';
 
-App.SidebarController = Ember.Controller.extend({
+App.IndexController = Ember.Controller.extend({
+
+  panelOpened: false,
 
   months: Ember.computed(function() {
     var all  = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
@@ -18,5 +20,14 @@ App.SidebarController = Ember.Controller.extend({
 
       return { name: mth, selectable: selectable };
     });
-  })
+  }),
+
+  actions: {
+    toggleMenu: function() {
+      var curr = this.get('panelOpened');
+
+      this.set('panelOpened', !curr);
+    }
+  }
+
 });

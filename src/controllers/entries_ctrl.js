@@ -1,13 +1,23 @@
 'use strict';
 
-App.EntriesController = Ember.Controller.extend({
-  panelOpened: false,
+App.EntriesController = Ember.ArrayController.extend({
 
   actions: {
-    toggleMenu: function() {
-      var curr = this.get('panelOpened');
+    createEntry: function() {
+      var text = this.get('newEntry').trim(),
 
-      this.set('panelOpened', !curr);
+          entry;
+
+      if (!text) { return false; }
+
+      entry = this.store.createRecord('entry', {
+        text: text
+      });
+
+      this.set('newEntry', '');
+
+      entry.save();
     }
   }
+
 });
