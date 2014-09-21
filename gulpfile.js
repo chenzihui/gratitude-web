@@ -31,7 +31,8 @@ gulp.task('watch', function() {
 gulp.task('concat:vendor', function() {
   gulp.src([
     './vendor/jquery/dist/jquery.js', './vendor/handlebars/handlebars.js',
-    './vendor/ember/ember.js', './vendor/ember-data/ember-data.js'
+    './vendor/ember/ember.js', './vendor/ember-data/ember-data.js',
+    './vendor/moment/moment.js'
   ])
   .pipe(concat('vendor.js'))
   .pipe(uglify({

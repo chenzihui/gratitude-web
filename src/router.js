@@ -10,15 +10,25 @@ App.EntriesRoute = Ember.Route.extend({
   model: function() {
     return this.store.find('entry');
   }
-})
+});
 
 App.EntriesIndexRoute = Ember.Route.extend({
   model: function() {
-    return this.modelFor('entries')
+    var today = moment().format();
+
+    return this.modelFor('entries').filter(function(entry) {
+      return entry.get('createdAt') == today;
+    });
   },
 
-  renderTemplate: function() {
-    var controller = this.controllerFor('entries');
+  setupController: function(controller, model) {
+    var today = moment().format('dddd, MMMM Do YYYY');
+
+    this._super(controller, model);
+    controller.set('currentDate', today);
+  },
+
+  renderTemplate: function(controller) {
     this.render('entries/index', { controller: controller });
   }
 });
