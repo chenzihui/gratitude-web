@@ -6,9 +6,9 @@
             {{#each months}}
             <li class="months__item uppercase">
                 {{#if selectable}}
-                <a class="months__item__text" href="#">{{name}}</a>
+                    {{#link-to "entries.detail" 2014 index 1 class="months__item__text"}}{{name}}{{/link-to}}
                 {{else}}
-                <span class="months__item__text">{{name}}</span>
+                    <span class="months__item__text">{{name}}</span>
                 {{/if}}
             </li>
             {{/each}}

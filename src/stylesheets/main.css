@@ -67,6 +67,10 @@ a.months__item__text:hover {
     background-color: #eee;
 }
 
+.months__item__text.active {
+    background-color: #ddd;
+}
+
 
 /* Main
  ============================== */
