@@ -1,1 +1,37 @@
-{{outlet}}
+<div class="container" {{bind-attr class="panelOpened:slide"}}>
+    <div class="sidepanel">
+        <h2 class="ms4 sidepanel__title">Welcome back</h2>
+
+        <ul class="list space months">
+            {{#each months}}
+            <li class="months__item uppercase">
+                {{#if selectable}}
+                    {{#link-to "entries.detail" 2014 index 1 class="months__item__text"}}{{name}}{{/link-to}}
+                {{else}}
+                    <span class="months__item__text">{{name}}</span>
+                {{/if}}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+
+    <div class="main">
+        <header class="masthead">
+            <a class="masthead__link breathe--large" href="#"
+              {{action "toggleMenu" on="click"}}>
+                <i class="fa fa-bars"></i>
+            </a>
+
+            <h1 class="masthead__title ms3">Gratitude Journal</h1>
+
+            <a class="masthead__link breathe--large" href="#"
+              {{action "openCalendar" on="click"}}>
+                <i class="fa fa-th"></i>
+            </a>
+        </header>
+
+        {{outlet "main"}}
+    </div>
+</div>
+
+{{outlet "modal"}}

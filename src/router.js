@@ -6,6 +6,24 @@ App.Router.map(function() {
   });
 });
 
+App.ApplicationRoute = Ember.Route.extend({
+  actions: {
+    openCalendar: function() {
+      return this.render('entries/calendar', {
+        into: 'application',
+        outlet: 'modal'
+      });
+    },
+
+    closeCalendar: function() {
+      return this.disconnectOutlet({
+        outlet: 'modal',
+        parentView: 'application'
+      });
+    }
+  }
+});
+
 App.EntriesRoute = Ember.Route.extend({
   model: function() {
     return this.store.find('entry');
@@ -13,6 +31,8 @@ App.EntriesRoute = Ember.Route.extend({
 });
 
 App.EntriesIndexRoute = Ember.Route.extend({
+  controllerName: 'entries',
+
   model: function() {
     var today = moment().format();
 
@@ -28,8 +48,8 @@ App.EntriesIndexRoute = Ember.Route.extend({
     controller.set('currentDate', today);
   },
 
-  renderTemplate: function(controller) {
-    this.render('entries/index', { controller: controller });
+  renderTemplate: function(controller, model) {
+    this.render('entries/index', { controller: controller, model: model });
   }
 });
 
