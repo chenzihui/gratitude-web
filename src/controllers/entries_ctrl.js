@@ -1,6 +1,6 @@
 'use strict';
 
-App.EntriesController = Ember.ArrayController.extend({
+App.EntriesIndexController = Ember.ArrayController.extend({
 
   actions: {
     createEntry: function() {
@@ -16,6 +16,8 @@ App.EntriesController = Ember.ArrayController.extend({
 
       this.set('newEntry', '');
       entry.save();
+
+      this.pushObject(entry);
     }
   }
 

@@ -31,13 +31,15 @@ App.EntriesRoute = Ember.Route.extend({
 });
 
 App.EntriesIndexRoute = Ember.Route.extend({
-  controllerName: 'entries',
-
   model: function() {
-    var today = moment().format();
+    var format = 'YYYY-M-D',
+        today  = moment().format(format),
+
+        createdAt;
 
     return this.modelFor('entries').filter(function(entry) {
-      return entry.get('createdAt') == today;
+      createdAt = moment(entry.get('createdAt')).format(format);
+      return createdAt == today;
     });
   },
 

@@ -4,11 +4,11 @@ App.Entry = DS.Model.extend({
   text: DS.attr('string'),
 
   createdAt: DS.attr('date', {
-    defaultValue: moment().format()
+    defaultValue: new Date()
   }),
 
   updatedAt: DS.attr('date', {
-    defaultValue: moment().format()
+    defaultValue: new Date()
   })
 });
 
