@@ -48,6 +48,7 @@ App.EntriesIndexRoute = Ember.Route.extend({
 
     this._super(controller, model);
     controller.set('currentDate', today);
+    controller.set('isPresent', true);
   },
 
   renderTemplate: function(controller, model) {
@@ -77,6 +78,7 @@ App.EntriesDetailRoute = Ember.Route.extend({
 
     this._super(controller, model);
     controller.set('currentDate', currentDate);
+    controller.set('isPresent', false);
   },
 
   renderTemplate: function(controller) {

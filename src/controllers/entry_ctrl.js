@@ -3,6 +3,20 @@
 App.EntryController = Ember.ObjectController.extend({
   editMode: false,
 
+  init: function() {
+    var format    = 'YYYY-M-D',
+        today     = moment().format(format),
+        createdAt = moment(this.get('createdAt')).format(format);
+
+    this._super();
+
+    if (createdAt == today) {
+      this.set('editable', true);
+    } else {
+      this.set('editable', false);
+    }
+  },
+
   actions: {
     editEntry: function() {
       this.set('editMode', true);
