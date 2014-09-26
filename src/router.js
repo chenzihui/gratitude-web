@@ -6,11 +6,15 @@ App.Router.map(function() {
   });
 });
 
-App.ApplicationRoute = Ember.Route.extend({
+App.EntriesRoute = Ember.Route.extend({
+  model: function(params) {
+    return this.store.find('entry');
+  },
+
   actions: {
     openCalendar: function() {
       return this.render('entries/calendar', {
-        into: 'application',
+        into: 'entries',
         outlet: 'modal'
       });
     },
@@ -18,15 +22,9 @@ App.ApplicationRoute = Ember.Route.extend({
     closeCalendar: function() {
       return this.disconnectOutlet({
         outlet: 'modal',
-        parentView: 'application'
+        parentView: 'entries'
       });
     }
-  }
-});
-
-App.EntriesRoute = Ember.Route.extend({
-  model: function() {
-    return this.store.find('entry');
   }
 });
 
@@ -57,7 +55,7 @@ App.EntriesIndexRoute = Ember.Route.extend({
 });
 
 App.EntriesDetailRoute = Ember.Route.extend({
-  controllerName: 'entries',
+  controllerName: 'entriesIndex',
 
   model: function(params) {
     var date      = new Date(params.year, params.month - 1, params.day),
